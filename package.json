@@ -4,7 +4,15 @@
   "main": "index.js",
   "author": "Saveliy Dmitriyev",
   "license": "MIT",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
   "devDependencies": {
-    "webpack": "^5.88.2"
+    "clean-webpack-plugin": "^4.0.0",
+    "dotenv": "^16.3.1",
+    "html-webpack-plugin": "^5.5.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   }
 }
