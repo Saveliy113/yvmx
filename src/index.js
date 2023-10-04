@@ -1,3 +1,5 @@
+import './styles/index.scss';
+
 function sum(a, b) {
   return a + b;
 }

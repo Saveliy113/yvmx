@@ -1,0 +1,11 @@
+$main-background: greenyellow;
+
+body {
+  background-color: $main-background;
+  font-family: serif;
+  color: darkblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
