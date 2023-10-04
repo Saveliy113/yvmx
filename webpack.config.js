@@ -3,7 +3,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const { DefinePlugin } = require('webpack');
 const DotEnvPlugin = require('dotenv');
 DotEnvPlugin.config();
@@ -56,6 +58,7 @@ const createWebpackConfig = () => {
     devServer: {
       port: 4200,
       hot: isDev,
+      watchFiles: ['src/*.html'],
     },
     plugins: [
       new DefinePlugin({
@@ -70,6 +73,9 @@ const createWebpackConfig = () => {
       }),
       new MiniCssExtractPlugin({
         filename: fileName('css'),
+      }),
+      new CopyPlugin({
+        patterns: [{ from: './assets', to: './assets' }],
       }),
     ],
     optimization: optimizationConfig(),

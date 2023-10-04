@@ -1,14 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700;6..12,800;6..12,900;6..12,1000&display=swap');
 @import '~normalize.css';
+@import 'src/styles/variables';
 
-$main-background: greenyellow;
+// @use 'src/styles/animations';
+
+* {
+  margin: 0;
+  padding: 0;
+  // box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+}
 
 body {
-  background-color: $main-background;
-  font-family: serif;
-  color: darkblue;
+  background-color: $gray-400;
+  color: $white;
+  overflow-y: hidden;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+.header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  user-select: none;
+  position: sticky;
+  height: 80px;
+  padding: 0 33px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  background-color: $gray-600;
+
+  > .main_logo {
+    position: relative;
+    top: 30%;
+
+    & img {
+      border-radius: 50%;
+      animation: white-light infinite alternate 2s ease-in-out;
+      // box-shadow: 0 0 15px $white;
+    }
+
+    &::before {
+      display: block;
+      content: '';
+      background-color: $gray-600;
+      width: 130px;
+      height: 130px;
+      position: absolute;
+      z-index: -1;
+      border-radius: 50%;
+      top: -13%;
+      left: -15%;
+    }
+  }
+
+  > .header_nav {
+    > .nav_links {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+  }
+
+  > #mode_btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    background: none;
+    outline: none;
+    border: 2px solid $white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@keyframes white-light {
+  from {
+    box-shadow: 0 0 0 $white;
+  }
+  to {
+    box-shadow: 0 0 15px $white;
+  }
+  // from {
+  //   border: 0 solid red;
+  // }
+  // to {
+  //   border: 10px solid red;
+  // }
 }
