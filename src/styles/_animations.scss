@@ -1,16 +1,10 @@
 @import 'src/styles/variables';
 
-@keyframes white-lightning {
-  // from {
-  //   box-shadow: 0 0 15px $white;
-  // }
-  // to {
-  //   box-shadow: 0 0 $white;
-  // }
+@keyframes white-light {
   from {
-    border: 0 solid red;
+    box-shadow: 0 0 0 $white;
   }
   to {
-    border: 10px solid red;
+    box-shadow: 0 0 15px $white;
   }
 }

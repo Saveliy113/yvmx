@@ -2,7 +2,7 @@
 @import '~normalize.css';
 @import 'src/styles/variables';
 
-// @use 'src/styles/animations';
+@use 'src/styles/animations';
 
 * {
   margin: 0;
@@ -40,7 +40,6 @@ a {
     & img {
       border-radius: 50%;
       animation: white-light infinite alternate 2s ease-in-out;
-      // box-shadow: 0 0 15px $white;
     }
 
     &::before {
