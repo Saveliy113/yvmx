@@ -24,7 +24,18 @@ const optimizationConfig = () => {
 };
 
 const cssLoaders = (extra) => {
-  const loaders = [MiniCssExtractPlugin.loader, 'css-loader'];
+  const loaders = [
+    MiniCssExtractPlugin.loader,
+    'css-loader',
+    {
+      loader: 'postcss-loader',
+      options: {
+        postcssOptions: {
+          plugins: [require('postcss-preset-env')],
+        },
+      },
+    },
+  ];
 
   if (extra) {
     loaders.push(extra);
@@ -33,59 +44,65 @@ const cssLoaders = (extra) => {
   return loaders;
 };
 
-console.log('ISDEV: ', isDev);
-console.log('ISPROD: ', isProd);
-
-module.exports = {
-  mode: 'development',
-  context: path.resolve(__dirname, 'src'),
-  entry: './index.js',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: fileName('js'),
-  },
-  devServer: {
-    port: 4200,
-    hot: isDev,
-  },
-  devtool: isDev ? 'source-map' : 'nosources-source-map',
-  plugins: [
-    new DefinePlugin({
-      'process.env': JSON.stringify(process.env),
-    }),
-    new CleanWebpackPlugin(),
-    new HTMLWebpackPlugin({
-      template: './index.html',
-      minify: {
-        collapseWhitespace: isProd,
-      },
-    }),
-    new MiniCssExtractPlugin({
-      filename: fileName('css'),
-    }),
-  ],
-  optimization: optimizationConfig(),
-  module: {
-    rules: [
-      {
-        test: /\.css$/i,
-        use: cssLoaders(),
-      },
-      {
-        test: /\.s[ac]ss$/i,
-        use: cssLoaders('sass-loader'),
-      },
-      { test: /\.(png|jpg|svg|gif)$/i, type: 'asset/resource' },
-      {
-        test: /\.m?js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
+const createWebpackConfig = () => {
+  const config = {
+    mode: 'development',
+    context: path.resolve(__dirname, 'src'),
+    entry: './index.js',
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      filename: fileName('js'),
+    },
+    devServer: {
+      port: 4200,
+      hot: isDev,
+    },
+    plugins: [
+      new DefinePlugin({
+        'process.env': JSON.stringify(process.env),
+      }),
+      new CleanWebpackPlugin(),
+      new HTMLWebpackPlugin({
+        template: './index.html',
+        minify: {
+          collapseWhitespace: isProd,
+        },
+      }),
+      new MiniCssExtractPlugin({
+        filename: fileName('css'),
+      }),
+    ],
+    optimization: optimizationConfig(),
+    module: {
+      rules: [
+        {
+          test: /\.css$/i,
+          use: cssLoaders(),
+        },
+        {
+          test: /\.s[ac]ss$/i,
+          use: cssLoaders('sass-loader'),
+        },
+        { test: /\.(png|jpg|svg|gif)$/i, type: 'asset/resource' },
+        {
+          test: /\.m?js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+            },
           },
         },
-      },
-    ],
-  },
+      ],
+    },
+  };
+
+  if (isDev) {
+    config.devtool = 'source-map';
+  }
+
+  return config;
 };
+
+module.exports = createWebpackConfig();

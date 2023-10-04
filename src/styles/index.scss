@@ -1,3 +1,5 @@
+@import '~normalize.css';
+
 $main-background: greenyellow;
 
 body {
@@ -8,4 +10,5 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  user-select: none;
 }
