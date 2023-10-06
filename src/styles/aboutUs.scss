@@ -1,0 +1,46 @@
+@import 'src/styles/variables';
+
+.about_us {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 200px;
+  padding-left: 90px;
+
+  > .about_image {
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -45px;
+      right: -100px;
+      bottom: -45px;
+      left: 45px;
+      border: 3px solid $orange;
+    }
+  }
+
+  > .about_text {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    > h1 {
+      margin: 0;
+      margin-bottom: 30px;
+      padding: 26px 286px;
+      color: $white;
+      text-align: center;
+      background-color: $orange;
+    }
+
+    > p {
+      margin-bottom: 10px;
+      font-weight: 200;
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
+}
