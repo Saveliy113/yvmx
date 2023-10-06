@@ -2,6 +2,7 @@ import './styles/index.scss';
 import './styles/header.scss';
 import './styles/mainScreen.scss';
 import './styles/aboutUs.scss';
+import './styles/disciplines.scss';
 import './styles/darkMode.scss';
 
 // const modeBtn = document.getElementById('mode_btn');
