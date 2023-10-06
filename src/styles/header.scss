@@ -1,0 +1,72 @@
+@import 'src/styles/variables';
+@import 'src/styles/animations';
+
+.header {
+  position: sticky;
+  max-width: 100%;
+  height: 80px;
+  padding: 0 33px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  background-color: $gray-600;
+  transition: background-color 0.2s ease-in-out;
+
+  > .main_logo {
+    position: relative;
+    top: 30%;
+
+    & img {
+      border-radius: 50%;
+      animation: white-light infinite alternate 2s ease-in-out;
+    }
+
+    &::before {
+      position: absolute;
+      top: -13%;
+      left: -15%;
+      display: block;
+      width: 130px;
+      height: 130px;
+      content: '';
+      background-color: $gray-600;
+      z-index: -1;
+      border-radius: 50%;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+  > .header_nav {
+    > .nav_links {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      list-style: none;
+    }
+  }
+
+  > #mode_btn {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: 2px solid $white;
+    border-radius: 8px;
+    background: none;
+    cursor: pointer;
+
+    > img {
+      transition: transform 0.1s ease-in;
+    }
+
+    &:hover,
+    &:hover > img {
+      transform: scale(95%);
+    }
+  }
+}

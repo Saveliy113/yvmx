@@ -1,8 +1,11 @@
 import './styles/index.scss';
+import './styles/header.scss';
+import './styles/mainScreen.scss';
+import './styles/darkMode.scss';
 
-function sum(a, b) {
-  return a + b;
-}
+// const modeBtn = document.getElementById('mode_btn');
 
-console.log(sum(5, 27));
-console.log(process.env.NODE_ENV);
+// modeBtn.addEventListener('click', (event) => {
+//   document.body.classList.toggle('dark');
+//   console.log(this);
+// });

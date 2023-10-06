@@ -2,19 +2,20 @@
 @import '~normalize.css';
 @import 'src/styles/variables';
 
-@use 'src/styles/animations';
-
 * {
   margin: 0;
   padding: 0;
-  // box-sizing: border-box;
+  box-sizing: border-box;
   font-family: 'Nunito Sans', sans-serif;
 }
 
 body {
   background-color: $gray-400;
   color: $white;
-  overflow-y: hidden;
+  // overflow-x: hidden;
+  scroll-behavior: smooth;
+  height: 10000px;
+  transition: all 0.2s ease-in-out;
 }
 
 a {
@@ -22,74 +23,10 @@ a {
   text-decoration: none;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  height: 80px;
-  padding: 0 33px;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-  background-color: $gray-600;
-
-  > .main_logo {
-    position: relative;
-    top: 30%;
-
-    & img {
-      border-radius: 50%;
-      animation: white-light infinite alternate 2s ease-in-out;
-    }
-
-    &::before {
-      display: block;
-      content: '';
-      background-color: $gray-600;
-      width: 130px;
-      height: 130px;
-      position: absolute;
-      z-index: -1;
-      border-radius: 50%;
-      top: -13%;
-      left: -15%;
-    }
-  }
-
-  > .header_nav {
-    > .nav_links {
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      gap: 2rem;
-    }
-  }
-
-  > #mode_btn {
-    width: 45px;
-    height: 45px;
-    border-radius: 8px;
-    background: none;
-    outline: none;
-    border: 2px solid $white;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  border: 1px solid blue;
 }
 
-@keyframes white-light {
-  from {
-    box-shadow: 0 0 0 $white;
-  }
-  to {
-    box-shadow: 0 0 15px $white;
-  }
-  // from {
-  //   border: 0 solid red;
-  // }
-  // to {
-  //   border: 10px solid red;
-  // }
-}
+

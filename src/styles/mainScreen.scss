@@ -1,0 +1,80 @@
+@import 'src/styles/variables';
+
+.main_screen {
+  position: relative;
+  height: 620px;
+  padding-top: 55px;
+  padding-right: 10rem;
+  display: flex;
+  justify-content: space-between;
+
+  > .hero_image {
+    padding-top: 50px;
+  }
+
+  &::before {
+    content: '';
+    padding-left: 100px;
+    background-image: url('../assets/images/mx_track.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.4;
+    z-index: -1;
+  }
+
+  > .main_screen-content {
+    > img:first-child {
+      margin-bottom: 28px;
+      opacity: 0.03;
+    }
+
+    > img:last-child {
+      margin-top: 51px;
+      opacity: 0.03;
+    }
+
+    > .screen_content-text {
+      padding-left: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      > h1 {
+        margin: 0;
+        font-size: 3.2rem;
+        text-transform: uppercase;
+        > span {
+          display: block;
+          margin-top: 0.8rem;
+          color: $orange;
+          font-size: 4.15rem;
+        }
+      }
+
+      > a {
+        display: block;
+        max-width: fit-content;
+        font-size: 1.2rem;
+        margin-top: 60px;
+        padding: 18px 60px;
+        color: $white;
+        background-color: $orange;
+        text-transform: uppercase;
+        border-radius: 30px;
+      }
+
+      > img:first-child {
+        margin-bottom: 28px;
+      }
+
+      > img:last-child {
+        margin-top: 51px;
+      }
+    }
+  }
+}
