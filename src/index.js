@@ -5,6 +5,7 @@ import './styles/aboutUs.scss';
 import './styles/disciplines.scss';
 import './styles/services.scss';
 import './styles/trainings.scss';
+import './styles/gallery.scss';
 import './styles/darkMode.scss';
 
 // const modeBtn = document.getElementById('mode_btn');
