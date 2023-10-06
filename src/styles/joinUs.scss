@@ -1,0 +1,28 @@
+@import 'src/styles/variables';
+
+#joinUs {
+  position: relative;
+
+  .joinUs_background {
+    // position: absolute;
+    opacity: 0.1;
+    > img {
+      max-width: 100%;
+    }
+  }
+
+  > .joinUs_content {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > .joinUs_content-text {
+       > .joinUs_text-background {
+        position: absolute;
+        top: 0;
+       }
+    }
+  }
+}
