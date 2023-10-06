@@ -1,0 +1,40 @@
+@import 'src/styles/variables';
+
+.services {
+  margin-top: 150px;
+
+  > h1 {
+    font-weight: bold;
+    padding: 24px 156px;
+    background-color: $orange;
+    max-width: fit-content;
+    margin-bottom: 50px;
+  }
+
+  > .services_items {
+    padding-left: 90px;
+    padding-right: 90px;
+    display: flex;
+    justify-content: center;
+    gap: 75px 130px;
+    flex-wrap: wrap;
+
+    > .service_item {
+      width: 210px;
+      height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      border: 2px solid $white;
+      border-radius: 12px;
+      padding: 20px 18px;
+      box-shadow: 5px 5px 20px rgba($white, 0.3);
+
+      > h3 {
+        font-size: 1.25rem;
+        font-weight: 300;
+      }
+    }
+  }
+}

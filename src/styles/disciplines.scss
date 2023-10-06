@@ -1,14 +1,16 @@
 @import 'src/styles/variables';
 
 .disciplines {
-  border: 2px solid yellow;
   height: 920px;
   margin-top: 170px;
+  padding-top: 115px;
   background-image: url('../assets/images/disciplines_background.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   > h1 {
     margin: 0;
-    margin-top: 115px;
     font-size: 6rem;
     font-weight: bold;
     color: $white;
@@ -21,10 +23,6 @@
     justify-content: space-evenly;
     margin-top: 50px;
     > .disciplines_item {
-      // width: 420px;
-      // height: 420px;
-      border: 1px solid red;
-
       > h3 {
         position: relative;
         top: -2rem;
