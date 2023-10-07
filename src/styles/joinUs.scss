@@ -2,27 +2,63 @@
 
 #joinUs {
   position: relative;
+  height: 550px;
+  padding-right: 90px;
 
-  .joinUs_background {
-    // position: absolute;
-    opacity: 0.1;
-    > img {
-      max-width: 100%;
-    }
+  &::before {
+    content: '';
+    background-image: url('../assets/images/join_us-background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.2;
+    z-index: -1;
   }
 
   > .joinUs_content {
-    position: absolute;
-    top: 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    height: 100%;
 
     > .joinUs_content-text {
-       > .joinUs_text-background {
+      width: 68%;
+      position: relative;
+
+      &::before {
+        content: '';
+        background-image: url('../assets/images/joinUs_text-background.png');
+        background-repeat: no-repeat;
+        background-size: cover;
         position: absolute;
         top: 0;
-       }
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        opacity: 0.8;
+      }
+
+      > h2,
+      > p {
+        max-width: 500px;
+        margin-left: 90px;
+      }
+
+      > h2 {
+        margin-top: 75px;
+        margin-bottom: 1.875rem;
+        font-size: 3.75rem;
+        font-weight: bold;
+      }
+
+      > p {
+        font-size: 2.19rem;
+      }
     }
   }
 }
