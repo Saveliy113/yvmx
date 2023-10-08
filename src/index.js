@@ -8,6 +8,7 @@ import './styles/trainings.scss';
 import './styles/gallery.scss';
 import './styles/joinUs.scss';
 import './styles/footer.scss';
+import './styles/contacts.scss';
 import './styles/darkMode.scss';
 
 // const modeBtn = document.getElementById('mode_btn');

@@ -1,0 +1,42 @@
+@import 'src/styles/variables';
+
+#contacts {
+  position: relative;
+  display: grid;
+  margin-top: 200px;
+  padding: 0 90px;
+  text-align: center;
+
+  > .ktm {
+    position: absolute;
+    top: 20%;
+    left: -10%;
+    z-index: 1;
+  }
+
+  > h1 {
+    margin: 0;
+    margin-bottom: 40px;
+    color: $orange;
+    font-size: 5.625rem;
+  }
+
+  > .contacts_content {
+    max-width: 990px;
+    display: flex;
+    justify-content: space-between;
+    justify-self: flex-end;
+    padding: 50px;
+    border: 2px solid $orange;
+    border-radius: 12px;
+
+    > .contacts_content-phones {
+      > .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        gap: 15px;
+      }
+    }
+  }
+}
