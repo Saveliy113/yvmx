@@ -38,3 +38,52 @@
     }
   }
 }
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+  .services {
+    > .services_items {
+      column-gap: 90px;
+    }
+  }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+  .services {
+    > .services_items {
+      row-gap: 50px;
+      justify-content: space-around;
+    }
+  }
+  /* */
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+
+  .services {
+    > .services_items {
+      padding: 0 30px;
+      justify-content: space-between;
+      column-gap: 10px;
+      > .service_item {
+        width: 150px;
+        height: 150px;
+        padding: 15px 10px;
+        > img {
+          width: 50%;
+
+        }
+
+        > h3 {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+}
