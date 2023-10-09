@@ -8,3 +8,25 @@
     box-shadow: 0 0 15px $white;
   }
 }
+
+@keyframes menuSlideDown {
+  from {
+    opacity: 0;
+    top: -300%;
+  }
+  to {
+    opacity: 1;
+    top: 70px;
+  }
+}
+
+@keyframes menuSlideUp {
+  from {
+    opacity: 1;
+    top: 70px;
+  }
+  to {
+    opacity: 0;
+    top: -300%;
+  }
+}
