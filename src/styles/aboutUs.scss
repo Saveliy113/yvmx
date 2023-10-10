@@ -1,46 +1,120 @@
 @import 'src/styles/variables';
 
 .about_us {
-  display: flex;
-  justify-content: space-between;
   margin-top: 200px;
-  padding-left: 90px;
+  padding-left: 3%;
+  padding-right: 3%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10%;
 
   > .about_image {
     position: relative;
+
+    > img {
+      width: 120%;
+    }
 
     &::after {
       content: '';
       display: block;
       position: absolute;
-      top: -45px;
-      right: -100px;
-      bottom: -45px;
-      left: 45px;
+      top: -7%;
+      right: -15%;
+      bottom: -7%;
+      left: 7%;
       border: 3px solid $orange;
     }
   }
 
   > .about_text {
-    max-width: 700px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-self: flex-start;
 
     > h1 {
       margin: 0;
       margin-bottom: 30px;
-      padding: 26px 286px;
+      padding: 26px 20%;
       color: $white;
       text-align: center;
+      white-space: nowrap;
       background-color: $orange;
     }
 
-    > p {
-      margin-bottom: 10px;
-      font-weight: 200;
-      font-size: 1.5rem;
-      line-height: 2rem;
+    > .about_text-paragraph {
+      max-width: 700px;
+      > p {
+        margin-bottom: 10px;
+        font-weight: 200;
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+    }
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+  .about_us {
+    margin-top: 10%;
+    display: grid;
+    justify-content: unset;
+    gap: unset;
+
+    > .about_image {
+      width: 70%;
+      justify-self: flex-end;
+      margin-top: 10%;
+      order: 1;
+
+      align-self: flex-end;
+      > img {
+        width: 80%;
+      }
+
+      &::after {
+        right: 0;
+      }
+    }
+
+    > .about_text {
+      > h1 {
+        width: 70%;
+      }
+    }
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  .about_us {
+    > .about_text {
+      > h1 {
+        padding-top: 4%;
+        padding-bottom: 4%;
+        font-size: 2rem;
+      }
+      > h1 {
+        position: relative;
+        left: -5%;
+      }
+
+      > .about_text-paragraph {
+        > p {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .about_us {
+    > .about_image {
+      width: 80%;
     }
   }
 }
