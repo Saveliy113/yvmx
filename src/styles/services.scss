@@ -4,32 +4,33 @@
   margin-top: 150px;
 
   > h1 {
-    font-weight: bold;
-    padding: 24px 156px;
-    background-color: $orange;
     max-width: fit-content;
     margin-bottom: 50px;
+    padding: 24px 5%;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: $orange;
   }
 
   > .services_items {
     padding-left: 90px;
     padding-right: 90px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 75px 130px;
-    flex-wrap: wrap;
 
     > .service_item {
       width: 210px;
       height: 220px;
+      padding: 20px 18px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
       border: 2px solid $white;
       border-radius: 12px;
-      padding: 20px 18px;
-      box-shadow: 5px 5px 20px rgba($white, 0.3);
+      box-shadow: 5px 5px 10px rgba($white, 0.3);
 
       > h3 {
         font-size: 1.25rem;
@@ -61,19 +62,17 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
-
   .services {
     > .services_items {
-      padding: 0 30px;
-      justify-content: space-between;
-      column-gap: 10px;
+      padding: 0 15px;
+      justify-content: space-evenly;
+      column-gap: 25px;
       > .service_item {
         width: 150px;
         height: 150px;
         padding: 15px 10px;
         > img {
           width: 50%;
-
         }
 
         > h3 {
@@ -86,4 +85,18 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
+  .services {
+    margin-top: 100px;
+
+    > h1 {
+      padding: 24px 5%;
+      font-size: 1.5rem;
+      margin-bottom: 10%;
+    }
+
+    > .services_items {
+      row-gap: 25px;
+      justify-content: center;
+    }
+  }
 }
