@@ -14,7 +14,48 @@
   align-items: center;
 
   > img {
+    position: absolute;
+    align-self: center;
     border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
     box-shadow: 0 0 10px $white;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+  .footer {
+    padding-left: 30px;
+    padding-right: 30px;
+    > p:first-child {
+      max-width: 40%;
+      text-align: center;
+    }
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  .footer {
+    position: relative;
+    height: fit-content;
+    padding: 60px 15px 10px 15px;
+    flex-direction: column;
+
+    > p {
+      font-size: 0.8rem;
+    }
+
+    > p:first-child {
+      max-width: none;
+      margin-top: 10px;
+      margin-bottom: 3px;
+    }
+    
+    > img {
+      width: 50px;
+      top: 10px;
+    }
   }
 }
