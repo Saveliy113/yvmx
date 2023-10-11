@@ -1,13 +1,17 @@
 @import 'src/styles/variables';
 
 .trainings {
+  border: 1px solid green;
   position: relative;
   display: flex;
   justify-content: space-between;
   margin-top: 200px;
   padding: 0 90px;
+  // overflow-y: hidden;
 
   .trainings_background {
+    width: 0; 
+    height: 0;
     position: absolute;
     opacity: 0.05;
     z-index: -1;

@@ -12,7 +12,7 @@
 body {
   background-color: $gray-400;
   color: $white;
-  // overflow-x: hidden;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   // height: 10000px;
   transition: all 0.2s ease-in-out;
@@ -29,7 +29,7 @@ a {
 }
 
 main {
-  border: 1px solid blue;
+  border: 1px solid  blue;
   overflow-x: hidden;
   padding-top: 70px;
 }

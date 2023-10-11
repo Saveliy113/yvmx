@@ -35,3 +35,25 @@
     column-gap: 2%;
   }
 }
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+  #gallery {
+    > .gallery_images {
+      justify-content: space-between;
+
+      > img {
+        width: 45%;
+        height: 45%;
+      }
+    }
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+}
