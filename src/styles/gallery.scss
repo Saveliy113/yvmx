@@ -29,10 +29,9 @@
   > .gallery_images {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: 0 auto;
-    row-gap: 80px;
-    column-gap: 2%;
+    gap: 80px 5%;
   }
 }
 
@@ -40,12 +39,29 @@
 @media only screen and (max-width: 1200px) {
   #gallery {
     > .gallery_images {
-      justify-content: space-between;
+      row-gap: 40px;
 
       > img {
-        width: 45%;
-        height: 45%;
+        width: 250px;
       }
+    }
+  }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+  #gallery {
+    padding: 0 15px;
+    > .gallery_images {
+      column-gap: 3%;
+
+      > img {
+        width: 200px;
+      }
+    }
+
+    > h1 {
+      font-size: 4rem;
     }
   }
 }
@@ -56,4 +72,22 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
+  #gallery {
+    justify-content: space-around;
+    > .gallery_images {
+      column-gap: 2%;
+
+      > img {
+        width: 160px;
+      }
+    }
+
+    > h1 {
+      font-size: 3rem;
+    }
+
+    > p {
+      font-size: 1rem;
+    }
+  }
 }
