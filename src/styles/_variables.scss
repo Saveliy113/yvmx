@@ -1,7 +1,23 @@
+/*----------COLORS----------*/
 $gray-600: #232323;
 $gray-400: #2c2c2c;
 $orange: #eb8157;
 $white: #fff;
+
+/*----------BORDERS----------*/
+@mixin border-sm($color) {
+  border: 1px solid $color;
+  border-radius: 8px;
+}
+
+@mixin border-bg($color) {
+  border: 1px solid $color;
+  border-radius: 12px;
+}
+
+/*----------FONTS----------*/
+
+/*----------MARGINS, PADDINGS----------*/
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width: 1200px) {
