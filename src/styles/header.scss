@@ -25,12 +25,12 @@
     }
 
     &::before {
+      width: 130px;
+      height: 130px;
       position: absolute;
       top: -13%;
       left: -15%;
       display: block;
-      width: 130px;
-      height: 130px;
       content: '';
       background-color: $gray-600;
       z-index: -1;
@@ -127,15 +127,16 @@
 @media only screen and (max-width: 480px) {
   .header {
     > .header_nav {
+      width: 250px;
+      padding: 20px;
       position: absolute;
       right: 1%;
       display: none;
-      padding: 20px;
       background: rgba(35, 35, 35, 0.5);
+      border: 1px solid rgba(35, 35, 35, 0.2);
       border-radius: 12px;
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(10.8px);
-      border: 1px solid rgba(35, 35, 35, 0.2);
       transition: all 0.2s ease-in-out;
 
       &.closing {
@@ -151,11 +152,16 @@
       }
 
       > .nav_links {
+        width: fit-content;
+        font-size: 1.5rem;
         position: relative;
         right: 0;
-        width: fit-content;
         flex-direction: column;
         justify-content: flex-end;
+
+        > li {
+          margin-bottom: 15px;
+        }
       }
     }
 
@@ -185,9 +191,11 @@
           &:nth-child(1) {
             transform: translateY(9px) rotate(45deg);
           }
+
           &:nth-child(2) {
             opacity: 0;
           }
+
           &:nth-child(3) {
             transform: translateY(-9px) rotate(-45deg);
           }
