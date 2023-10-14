@@ -11,10 +11,38 @@ import './styles/footer.scss';
 import './styles/contacts.scss';
 import './styles/darkMode.scss';
 
-// const modeBtn = document.getElementById('mode_btn');
-const mobileMenuBtn = document.getElementById('mobile_menu-btn');
+/*--------------NAVIGATION--------------*/
+
 const navMenu = document.querySelector('.header_nav');
-console.log(mobileMenuBtn);
+const mainLogo = document.querySelector('.main_logo');
+
+navMenu.addEventListener('click', (event) => {
+  if (event.target.tagName.toLowerCase() === 'a') {
+    event.preventDefault();
+    document.querySelector(event.target.getAttribute('href')).scrollIntoView();
+  }
+});
+
+mainLogo.addEventListener('click', (event) => {
+  event.preventDefault();
+  scrollTo({ top: 0 });
+});
+
+/*--------------MOBILE MENU--------------*/
+
+const mobileMenuBtn = document.getElementById('mobile_menu-btn');
+
+function closeMenu() {
+  navMenu.classList.remove('opened');
+  navMenu.classList.add('closing');
+  navMenu.addEventListener(
+    'animationend',
+    () => {
+      navMenu.classList.remove('closing');
+    },
+    { once: true }
+  );
+}
 
 mobileMenuBtn.addEventListener('click', () => {
   mobileMenuBtn.classList.toggle('isOpened');
@@ -22,21 +50,24 @@ mobileMenuBtn.addEventListener('click', () => {
   if (mobileMenuBtn.classList.value === 'isOpened') {
     navMenu.classList.add('opened');
   } else {
-    navMenu.classList.remove('opened');
-    navMenu.classList.add('closing');
-    navMenu.addEventListener(
-      'animationend',
-      () => {
-        navMenu.classList.remove('closing');
-      },
-      { once: true }
-    );
+    closeMenu();
   }
 });
 
-window.onscroll = () => {
-  console.log(window.scrollY);
-};
+document.addEventListener('click', (event) => {
+  if (
+    !event.target.className.includes('header_nav') &&
+    event.target.id !== 'mobile_menu-btn' &&
+    navMenu.className.includes('opened')
+  ) {
+    mobileMenuBtn.classList.remove('isOpened');
+    closeMenu();
+  }
+});
+
+/*--------------DARK MODE--------------*/
+
+// const modeBtn = document.getElementById('mode_btn');
 
 // modeBtn.addEventListener('click', (event) => {
 //   document.body.classList.toggle('dark');
@@ -46,33 +77,40 @@ window.onscroll = () => {
 /*----------------SECTIONS ANCHORS----------------*/
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('header nav a');
-const contactsLink = document.querySelector(
-  'header nav a[href="#contacts"]'
-).outerHTML;
 
-console.log('Contacts Link: ', contactsLink);
-console.log('All header links: ', navLinks);
+function changeActiveMenuTab() {
+  const scrollFromTop = window.scrollY;
 
-window.onscroll = () => {
-  sections.forEach((section) => {
-    const scrollFromTop = window.scrollY;
-    const sectionOffset = section.offsetTop - 200;
-    const sectionHeight = section.offsetHeight;
-    const sectionId = section.getAttribute('id');
-    // console.log('Section ID: ', sectionId);
+  if (scrollFromTop === 0) {
+    document
+      .querySelector('header nav a[href="#main_screen"]')
+      .classList.add('active');
 
-    if (
-      scrollFromTop > sectionOffset &&
-      scrollFromTop < sectionOffset + sectionHeight
-    ) {
-      navLinks.forEach((navLink) => {
-        navLink.classList.remove('active');
-        document
-          .querySelector(`header nav a[href='#${sectionId}']`)
-          .classList.add('active');
-      });
-    }
-  });
-};
+    return;
+  } else {
+    sections.forEach((section) => {
+      const sectionHeight = section.offsetHeight;
+      const sectionOffset = section.offsetTop - sectionHeight / 4;
+      const sectionId = section.getAttribute('id');
 
-console.log(navLinks);
+      if (
+        scrollFromTop > sectionOffset &&
+        scrollFromTop < sectionOffset + sectionHeight
+      ) {
+        navLinks.forEach((navLink) => {
+          const sectionLink = document.querySelector(
+            `header nav a[href='#${sectionId}']`
+          );
+
+          if (sectionLink) {
+            navLink.classList.remove('active');
+            sectionLink.classList.add('active');
+          }
+        });
+      }
+    });
+  }
+}
+
+window.addEventListener('DOMContentLoaded', changeActiveMenuTab);
+window.addEventListener('scroll', changeActiveMenuTab);

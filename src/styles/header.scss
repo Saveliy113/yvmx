@@ -20,6 +20,11 @@
   > .main_logo {
     position: relative;
     top: 30%;
+    border-radius: 50%;
+
+    > a {
+      display: block;
+    }
 
     & img {
       border-radius: 50%;
@@ -218,6 +223,7 @@
           margin: 6px auto;
           background-color: $white;
           border-radius: 2px;
+          pointer-events: none;
           transition: all 0.2s ease-in-out;
         }
 
