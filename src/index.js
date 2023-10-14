@@ -34,7 +34,45 @@ mobileMenuBtn.addEventListener('click', () => {
   }
 });
 
+window.onscroll = () => {
+  console.log(window.scrollY);
+};
+
 // modeBtn.addEventListener('click', (event) => {
 //   document.body.classList.toggle('dark');
 //   console.log(this);
 // });
+
+/*----------------SECTIONS ANCHORS----------------*/
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('header nav a');
+const contactsLink = document.querySelector(
+  'header nav a[href="#contacts"]'
+).outerHTML;
+
+console.log('Contacts Link: ', contactsLink);
+console.log('All header links: ', navLinks);
+
+window.onscroll = () => {
+  sections.forEach((section) => {
+    const scrollFromTop = window.scrollY;
+    const sectionOffset = section.offsetTop - 200;
+    const sectionHeight = section.offsetHeight;
+    const sectionId = section.getAttribute('id');
+    // console.log('Section ID: ', sectionId);
+
+    if (
+      scrollFromTop > sectionOffset &&
+      scrollFromTop < sectionOffset + sectionHeight
+    ) {
+      navLinks.forEach((navLink) => {
+        navLink.classList.remove('active');
+        document
+          .querySelector(`header nav a[href='#${sectionId}']`)
+          .classList.add('active');
+      });
+    }
+  });
+};
+
+console.log(navLinks);

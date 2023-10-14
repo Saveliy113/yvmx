@@ -7,13 +7,14 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Nunito Sans', sans-serif;
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px;
 }
 
 body {
   background-color: $gray-400;
   color: $white;
   overflow-x: hidden;
-  scroll-behavior: smooth;
   // height: 10000px;
   transition: all 0.2s ease-in-out;
 }
@@ -29,17 +30,8 @@ a {
 }
 
 main {
-  // border: 1px solid blue;
+  border: 1px solid blue;
   overflow-x: hidden;
   padding-top: 70px;
-
-  // > .trainings_background {
-  //   width: fit-content;
-  //   height: fit-content;
-  //   position: absolute;
-  //   opacity: 0.05;
-  //   z-index: -1;
-  //   top: 345%;
-  //   left: -35%;
-  // }
+  // margin-top: 80px;
 }

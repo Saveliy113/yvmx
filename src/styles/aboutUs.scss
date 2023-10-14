@@ -1,6 +1,6 @@
 @import 'src/styles/variables';
 
-.about_us {
+#about_us {
   margin-top: 200px;
   padding-left: 3%;
   padding-right: 3%;
@@ -57,7 +57,7 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width: 1200px) {
-  .about_us {
+  #about_us {
     margin-top: 10%;
     display: grid;
     justify-content: unset;
@@ -89,7 +89,7 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
-  .about_us {
+  #about_us {
     > .about_text {
       > h1 {
         padding-top: 4%;
@@ -112,7 +112,7 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
-  .about_us {
+  #about_us {
     > .about_image {
       width: 80%;
     }

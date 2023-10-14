@@ -126,10 +126,11 @@
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
   #joinUs {
+    height: 650px;
     padding-right: 0;
 
     &::before {
-      right: -850px;
+      right: -950px;
     }
 
     > .joinUs_content {
@@ -174,8 +175,8 @@
         width: fit-content;
 
         > #joinUs_kinescope-player {
-          width: 147px;
-          height: 260px;
+          width: 205px;
+          height: 365px;
         }
       }
     }
@@ -198,15 +199,6 @@
 
         > h2 {
           margin-top: 20px;
-        }
-      }
-
-      > .joinUs_content-video {
-        > #joinUs_kinescope-player {
-          width: 152px;
-          height: 270px;
-          border: none;
-          outline: none;
         }
       }
     }

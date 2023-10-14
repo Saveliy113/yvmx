@@ -1,6 +1,6 @@
 @import 'src/styles/variables';
 
-.disciplines {
+#disciplines {
   height: 800px;
   margin-top: 170px;
   display: flex;
@@ -54,7 +54,7 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width: 1200px) {
-  .disciplines {
+  #disciplines {
     > .disciplines_items {
       width: 100%;
       gap: 10px;
@@ -78,7 +78,7 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
-  .disciplines {
+  #disciplines {
     gap: 25px;
 
     > .disciplines_background {
@@ -121,7 +121,7 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
-  .disciplines {
+  #disciplines {
     justify-content: center;
 
     > .disciplines_background {
