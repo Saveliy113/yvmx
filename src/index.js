@@ -114,3 +114,61 @@ function changeActiveMenuTab() {
 
 window.addEventListener('DOMContentLoaded', changeActiveMenuTab);
 window.addEventListener('scroll', changeActiveMenuTab);
+
+/*--------------GALLERY--------------*/
+const galleryImages = document.querySelectorAll('.gallery_image');
+const galleryPopup = document.querySelector('.gallery_popup');
+const galleryCollapseBtn = document.querySelector('#popup_collapse-btn');
+const popupImage = document.querySelector('#popup_image');
+const galleryLeftButton = document.querySelector('#gallery_left');
+const galleryRightButton = document.querySelector('#gallery_right');
+let currentImage = 1;
+
+galleryImages.forEach((image, id) => {
+  image.addEventListener('click', () => {
+    galleryPopup.classList.toggle('active');
+    document.body.style.overflowY = 'hidden';
+    updateImage(id + 1);
+  });
+});
+
+galleryLeftButton.addEventListener('click', () => {
+  currentImage -= 1;
+
+  if (currentImage <= 0) {
+    currentImage = galleryImages.length;
+  }
+
+  updateImage(currentImage);
+});
+
+galleryRightButton.addEventListener('click', () => {
+  currentImage += 1;
+
+  if (currentImage > galleryImages.length) {
+    currentImage = 1;
+  }
+
+  updateImage(currentImage);
+});
+
+galleryCollapseBtn.addEventListener('click', () => {
+  closePopup();
+});
+
+function updateImage(i) {
+  popupImage.src = `./assets/images/gallery_${i}.jpg`;
+}
+
+function closePopup() {
+  galleryPopup.classList.remove('active');
+  galleryPopup.classList.add('closing');
+  galleryPopup.addEventListener(
+    'animationend',
+    () => {
+      galleryPopup.classList.remove('closing');
+      document.body.style.overflowY = 'unset';
+    },
+    { once: true }
+  );
+}
