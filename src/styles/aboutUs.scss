@@ -94,9 +94,9 @@
   #about_us {
     > .about_text {
       > h1 {
+        font-size: $title-sm;
         padding-top: 4%;
         padding-bottom: 4%;
-        font-size: 2rem;
       }
       > h1 {
         position: relative;
@@ -105,7 +105,7 @@
 
       > .about_text-paragraph {
         > p {
-          font-size: 1.2rem;
+          font-size: $text-bg;
         }
       }
     }
@@ -117,6 +117,14 @@
   #about_us {
     > .about_image {
       width: 80%;
+    }
+
+    > .about_text {
+      > .about_text-paragraph {
+        > p {
+          font-size: $text-md;
+        }
+      }
     }
   }
 }
