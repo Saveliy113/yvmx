@@ -27,6 +27,10 @@ $fw-md: 400;
 $fw-bold: 800;
 
 /*----------MARGINS, PADDINGS----------*/
+$section-margin-pc: 200px;
+$section-margin-mob: 150px;
+$section-padding-pc: 3%;
+$section-padding-mob: 15px;
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width: 1200px) {

@@ -10,6 +10,14 @@
   > .hero_image {
     padding-top: 50px;
     padding-right: 20%;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.5s ease-in;
+
+    &._animate {
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
 
   &::before {
@@ -45,6 +53,9 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
+      transform: translateX(-40%);
+      opacity: 0;
+      transition: all 0.5s ease-in;
 
       > h1 {
         margin: 0;
@@ -77,6 +88,11 @@
           background-color: $orange;
           transform: scale(1.05);
         }
+      }
+
+      &._animate {
+        transform: translateX(0);
+        opacity: 1;
       }
     }
   }

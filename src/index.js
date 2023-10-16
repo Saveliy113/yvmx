@@ -172,3 +172,49 @@ function closePopup() {
     { once: true }
   );
 }
+
+/*--------------ONSCROLL ANIMATIONS--------------*/
+
+const animItems = document.querySelectorAll('._anim-items');
+console.log(animItems);
+
+if (animItems.length > 0) {
+  window.addEventListener('scroll', animateOnScroll);
+
+  function animateOnScroll() {
+    for (let i = 0; i < animItems.length; i++) {
+      const animItem = animItems[i];
+      const animItemHeight = animItem.offsetHeight;
+      const animItemOffset = elementOffset(animItem).top;
+      const animStart = 4;
+
+      let animItemPoint = window.innerHeight - animItemHeight / animStart;
+
+      if (animItemHeight > window.innerHeight) {
+        console.log('ITEM HEIGHT > WINDOW HEIGHT', animItem);
+        animItemPoint = window.innerHeight - window.innerHeight / animStart;
+      }
+
+      if (
+        window.scrollY > animItemOffset - animItemPoint &&
+        window.scrollY < animItemOffset + animItemHeight
+      ) {
+        animItem.classList.add('_animate');
+      } else {
+        if (!animItem.classList.contains('_anim-no-repeat')) {
+          animItem.classList.remove('_animate');
+        }
+      }
+    }
+  }
+
+  function elementOffset(element) {
+    const rect = element.getBoundingClientRect();
+    const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
+  }
+
+  animateOnScroll();
+}

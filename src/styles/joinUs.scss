@@ -4,7 +4,7 @@
   position: relative;
   height: 550px;
   padding-right: 5%;
-  margin-top: 200px;
+  margin-top: $section-margin-pc;
 
   &::before {
     content: '';
@@ -35,6 +35,12 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      transform: translateX(-100%);
+      transition: all 0.5s ease-in;
+
+      &._animate {
+        transform: translate(0);
+      }
 
       > .joinUs_text-background {
         position: absolute;
@@ -100,7 +106,7 @@
 /* Medium Devices, Desktops */
 @media only screen and (max-width: 992px) {
   #joinUs {
-    padding-right: 15px;
+    padding-right: $section-padding-mob;
 
     &::before {
       right: -400px;
@@ -109,12 +115,12 @@
     > .joinUs_content {
       > .joinUs_content-text {
         > h2 {
-          margin-left: 15px;
+          margin-left: $section-padding-mob;
           font-size: 2rem;
         }
 
         > p {
-          margin-left: 15px;
+          margin-left: $section-padding-mob;
           font-size: 1.5rem;
         }
       }
@@ -161,12 +167,10 @@
         }
 
         > h2 {
-          margin-left: 15px;
           font-size: $title-sm;
         }
 
         > p {
-          margin-left: 15px;
           font-size: $text-bg;
         }
       }
@@ -189,8 +193,8 @@
   #joinUs {
     > .joinUs_content {
       > .joinUs_content-text {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: $section-padding-mob;
+        padding-right: $section-padding-mob;
 
         > h2,
         > p {
