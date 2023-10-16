@@ -39,16 +39,14 @@
   }
 
   > .gallery_popup {
-    position: fixed;
-    padding: 20px;
-    display: none;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100vh;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 9999;
-    // transform: translate(-50%, -50%) scale(0);
-    /* From https://css.glass */
+    padding: 20px;
     background: rgba(35, 35, 35, 0.75);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -56,7 +54,6 @@
     -webkit-backdrop-filter: blur(10.1px);
     border: 1px solid rgba(35, 35, 35, 0.26);
     overflow: hidden;
-    // opacity: 0;
     transition: all 0.5s ease-in-out;
 
     &.active {
@@ -113,9 +110,15 @@
     }
 
     > .bx-collapse-alt {
+      width: 70px;
+      height: 70px;
+      font-size: 50px;
       position: absolute;
       right: 3%;
-      font-size: 50px;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       cursor: pointer;
       transition: all 0.1s ease-in;
 
@@ -137,6 +140,13 @@
         > img {
           width: 250px;
         }
+      }
+    }
+
+    > .gallery_popup {
+      > .bxs-left-arrow,
+      > .bxs-right-arrow {
+        background-color: rgba($orange, 0.6);
       }
     }
   }
