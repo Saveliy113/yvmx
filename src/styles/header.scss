@@ -2,11 +2,11 @@
 @import 'src/styles/animations';
 
 .header {
+  width: 100%;
+  height: 80px;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 80px;
   padding: 0 33px;
   display: flex;
   justify-content: space-between;
@@ -60,6 +60,7 @@
         transition: all 0.2s ease-in;
 
         > a {
+          font-size: $text-std;
           padding-left: 10px;
           padding-right: 10px;
 

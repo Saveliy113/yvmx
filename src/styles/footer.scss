@@ -3,15 +3,15 @@
 .footer {
   width: 100%;
   height: 120px;
+  margin-top: 200px;
   padding-left: 90px;
   padding-right: 90px;
-  background-color: $gray-600;
-  border-top-right-radius: 12px;
-  border-top-left-radius: 12px;
-  margin-top: 200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: $gray-600;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
 
   > img {
     position: absolute;
@@ -20,6 +20,10 @@
     left: 50%;
     transform: translateX(-50%);
     box-shadow: 0 0 10px $white;
+  }
+
+  > p {
+    font-size: $text-std;
   }
 }
 

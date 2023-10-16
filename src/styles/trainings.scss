@@ -38,6 +38,8 @@
       max-width: 600px;
 
       > p {
+        font-size: $text-bg;
+        font-weight: $fw-normal;
         margin-bottom: 1rem;
       }
     }
@@ -46,11 +48,11 @@
   > .trainings_video-wrapper {
     text-align: center;
     > h1 {
+      font-size: $title-bg;
+      font-weight: bold;
       margin: 0;
       margin-bottom: 30px;
       color: $orange;
-      font-size: 5.625rem;
-      font-weight: bold;
     }
 
     > .trainings_kinescope-player {

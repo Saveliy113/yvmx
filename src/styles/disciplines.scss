@@ -23,9 +23,9 @@
   }
 
   > h1 {
-    margin: 0;
-    font-size: 6rem;
+    font-size: $title-bg;
     font-weight: bold;
+    margin: 0;
     color: $white;
     text-transform: uppercase;
     text-align: center;
@@ -38,15 +38,15 @@
 
     > .disciplines_item {
       > h3 {
+        font-size: $title-sm;
+        font-weight: 400;
         position: relative;
         top: -2rem;
         left: -5rem;
-        text-align: center;
         padding: 18px 36px;
-        font-size: 2.5rem;
-        font-weight: 400;
-        background-color: rgba(0, 0, 0, 0.6);
+        text-align: center;
         border-radius: 8px;
+        background-color: rgba(0, 0, 0, 0.6);
       }
     }
   }

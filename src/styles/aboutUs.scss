@@ -34,6 +34,7 @@
     align-self: flex-start;
 
     > h1 {
+      font-size: $title-sm;
       margin: 0;
       margin-bottom: 30px;
       padding: 26px 20%;
@@ -45,11 +46,12 @@
 
     > .about_text-paragraph {
       max-width: 700px;
+
       > p {
-        margin-bottom: 10px;
-        font-weight: 200;
-        font-size: 1.5rem;
+        font-size: $text-bg;
+        font-weight: $fw-normal;
         line-height: 2rem;
+        margin-bottom: 10px;
       }
     }
   }
