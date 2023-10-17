@@ -161,14 +161,21 @@
 
       <section id="disciplines">
         <div class="disciplines_background">
-          <img
+          <picture>
+            <source
+              srcset="./assets/images/disciplines_background_mobile.png"
+              media="(max-width: 768px)"
+            />
+            <img src="./assets/images/disciplines_background_1920.png" alt="" />
+          </picture>
+          <!-- <img
             src="./assets/images/disciplines_background_1920.png"
             alt=""
             srcset="
               ./assets/images/disciplines_background_mobile.png 1500w,
               ./assets/images/disciplines_background_1920.png   1920w
             "
-          />
+          /> -->
         </div>
         <h1>Дисциплины</h1>
         <div class="disciplines_items">
