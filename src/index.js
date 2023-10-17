@@ -67,12 +67,12 @@ document.addEventListener('click', (event) => {
 
 /*--------------DARK MODE--------------*/
 
-// const modeBtn = document.getElementById('mode_btn');
+const modeBtn = document.getElementById('mode_btn');
 
-// modeBtn.addEventListener('click', (event) => {
-//   document.body.classList.toggle('dark');
-//   console.log(this);
-// });
+modeBtn.addEventListener('click', (event) => {
+  document.body.classList.toggle('dark');
+  console.log(this);
+});
 
 /*----------------SECTIONS ANCHORS----------------*/
 const sections = document.querySelectorAll('section');
@@ -191,7 +191,6 @@ if (animItems.length > 0) {
       let animItemPoint = window.innerHeight - animItemHeight / animStart;
 
       if (animItemHeight > window.innerHeight) {
-        console.log('ITEM HEIGHT > WINDOW HEIGHT', animItem);
         animItemPoint = window.innerHeight - window.innerHeight / animStart;
       }
 
@@ -207,14 +206,16 @@ if (animItems.length > 0) {
       }
     }
   }
-
+  
   function elementOffset(element) {
     const rect = element.getBoundingClientRect();
     const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
+    
     return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
   }
-
+  
   animateOnScroll();
 }
+
+console.log(document.documentElement.scrollTop);

@@ -6,7 +6,6 @@
   > h1 {
     max-width: fit-content;
     font-size: $title-sm;
-    font-weight: bold;
     margin-bottom: 50px;
     padding: 24px 5%;
     background-color: $orange;
@@ -33,13 +32,25 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
+      gap: 5px;
       border: 2px solid $white;
       border-radius: 12px;
       box-shadow: 5px 5px 10px rgba($white, 0.3);
 
       > h3 {
         font-size: $text-md;
-        font-weight: 300;
+        font-weight: 400;
+      }
+
+      > svg {
+        fill: $white;
+      }
+
+      &:nth-child(1) {
+        > svg {
+          stroke: $white;
+          fill: none;
+        }
       }
     }
   }

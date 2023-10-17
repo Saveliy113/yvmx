@@ -1,34 +1,155 @@
 @import 'src/styles/variables';
 
 body[class='dark'] {
-  background-color: $white;
+  background-color: $light-white;
 
   .header {
-    background-color: $orange;
-    color: black;
+    background-color: $gray-200;
 
     > .main_logo {
       &::before {
-        background-color: $orange;
+        background-color: $gray-200;
       }
     }
 
     > #mode_btn {
-      border-color: black;
+      border-color: $gray-200;
+    }
+  }
 
+  #main_screen {
+    &::before {
+      opacity: 0.8;
+    }
+    > .main_screen-content {
       > img {
-        animation: disabling 0.5s ease-in forwards;
+        opacity: 0.2;
+      }
+      > .screen_content-text {
+        > h1 {
+          color: $orange;
+        }
       }
     }
   }
-}
 
-@keyframes disabling {
-  from {
-    opacity: 1;
+  #about_us {
+    > .about_text {
+      color: $gray-200;
+      > .about_text-paragraph {
+        > p {
+          font-weight: 400;
+        }
+      }
+      > h1 {
+        color: $gray-200;
+      }
+    }
   }
-  to {
-    opacity: 0;
-    display: none;
+
+  #disciplines {
+    > h1 {
+      color: $gray-200;
+    }
+  }
+
+  #services {
+    > h1 {
+      color: $gray-200;
+    }
+
+    > .services_items {
+      > .service_item {
+        color: $gray-200;
+        border-color: $gray-200;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+
+        > h3 {
+          font-weight: 400;
+        }
+
+        > svg {
+          fill: $gray-200;
+        }
+
+        &:nth-child(1) {
+          > svg {
+            fill: none;
+            stroke: $gray-200;
+          }
+        }
+      }
+    }
+  }
+
+  #trainings {
+    > .trainings_text {
+      > .trainings_text-paragraphs {
+        color: $gray-200;
+        > p {
+          font-weight: 400;
+        }
+      }
+    }
+
+    > .trainings_background {
+      opacity: 0.3;
+    }
+  }
+
+  #gallery {
+    > p {
+      color: $gray-200;
+      font-weight: 400;
+    }
+
+    > .gallery_background {
+      opacity: 0.5;
+    }
+  }
+
+  #joinUs {
+    > .joinUs_content {
+      color: $gray-200;
+
+      > .joinUs_content-text {
+        > p {
+          font-weight: 300;
+        }
+      }
+    }
+
+    &::before {
+      opacity: 0.6;
+    }
+  }
+
+  #contacts {
+    color: $gray-200;
+    font-weight: 400;
+    > .contacts_content-wrapper {
+      > .contacts_content {
+        > .contacts_content-phones {
+
+          > .contact-item {
+            > a {
+              border-bottom-color: $gray-200;
+            }
+          }
+          > .socials {
+            > .socials_items {
+              > .social_item {
+                color: $light-white;
+                background-color: $gray-200;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    background-color: $gray-200;
   }
 }

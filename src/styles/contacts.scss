@@ -11,7 +11,7 @@
     left: -10%;
     z-index: 1;
     transform: translateX(90%);
-    transition: all 2.5s ease-in;
+    transition: all 2.5s ease-out;
 
     &._animate {
       transform: translateX(0);
