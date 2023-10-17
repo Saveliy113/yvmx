@@ -100,7 +100,7 @@
       </nav>
       <div class="header_actions">
         <button id="mode_btn">
-          <img src="./assets/icons/sun_icon.svg" alt="" />
+          <img src="./assets/icons/sun_icon.svg" alt="Light mode button" id="mode_button-img" />
         </button>
         <div id="mobile_menu-btn">
           <span class="line"></span>
@@ -113,7 +113,7 @@
     <main>
       <section id="main_screen">
         <div class="main_screen-content">
-          <img src="./assets/images/mx_tire_bg.svg" alt="" />
+          <img src="./assets/images/mx_tire_bg.svg" alt="След покрышки" />
           <div class="screen_content-text _anim-items _anim-no-repeat">
             <h1>
               Здесь растят <br />
@@ -121,10 +121,10 @@
             </h1>
             <a href="tel:+77774312233">Записаться</a>
           </div>
-          <img src="./assets/images/mx_tire_sm.svg" alt="" />
+          <img src="./assets/images/mx_tire_sm.svg" alt="След покрышки" />
         </div>
         <div class="hero_image _anim-items">
-          <img src="./assets/images/whip_3.png" alt="" />
+          <img src="./assets/images/whip_3.png" alt="Гонщик на мотоцикле" />
         </div>
       </section>
 
@@ -132,7 +132,11 @@
         <div class="about_image">
           <picture>
             <source type="image/webp" srcset="./assets/images/about_us.webp" />
-            <img src="./assets/images/about_us.png" alt="" />
+            <img
+              src="./assets/images/about_us.png"
+              alt="Яновский Вячеслав - тренер мотошколы"
+              title="Яновский Вячеслав - тренер мотошколы"
+            />
           </picture>
         </div>
         <div class="about_text">
@@ -168,23 +172,15 @@
             />
             <img src="./assets/images/disciplines_background_1920.png" alt="" />
           </picture>
-          <!-- <img
-            src="./assets/images/disciplines_background_1920.png"
-            alt=""
-            srcset="
-              ./assets/images/disciplines_background_mobile.png 1500w,
-              ./assets/images/disciplines_background_1920.png   1920w
-            "
-          /> -->
         </div>
         <h1>Дисциплины</h1>
         <div class="disciplines_items">
           <div class="disciplines_item">
-            <img src="./assets/images/mx_start.png" alt="" />
+            <img src="./assets/images/mx_start.png" alt="Мотокросс" />
             <h3>МОТОКРОСС</h3>
           </div>
           <div class="disciplines_item">
-            <img src="./assets/images/enduro.png" alt="" />
+            <img src="./assets/images/enduro.png" alt="Эндуро" />
             <h3>ЭНДУРО</h3>
           </div>
         </div>
@@ -335,15 +331,14 @@
         </div>
         <div class="trainings_video-wrapper">
           <h1>ТРЕНИРОВКИ</h1>
-          <!-- <div class="trainings_kinescope-player">
+          <div class="trainings_kinescope-player">
             <iframe
               src="https://kinescope.io/embed/stjUSfK9WjoADMrAD42Sbo"
               allow="autoplay; fullscreen; picture-in-picture; encrypted-media;"
               frameborder="0"
               allowfullscreen
-              style=""
             ></iframe>
-          </div> -->
+          </div>
         </div>
       </section>
 
@@ -352,57 +347,81 @@
         <p>Немного атмосферы тренировок</p>
         <div class="gallery_images _anim-items _anim-no-repeat">
           <div class="gallery_image">
-            <picture>
+            <picture alt="Фото с гонки на треке Кайрат-282">
               <source
                 type="image/webp"
                 srcset="./assets/images/gallery_1.webp"
               />
-              <img src="./assets/images/gallery_1.png" alt="" />
+              <img
+                src="./assets/images/gallery_1.png"
+                alt="Фото с гонки на треке Кайрат-282"
+              />
             </picture>
           </div>
           <div class="gallery_image">
-            <img src="./assets/images/gallery_2.jpg" alt="" />
+            <img
+              src="./assets/images/gallery_2.jpg"
+              alt="Тренер Яновский Вячеслав на треке Фабричный"
+            />
           </div>
           <div class="gallery_image">
-            <picture>
+            <picture alt="Фото на старте">
               <source
                 type="image/webp"
                 srcset="./assets/images/gallery_3.webp"
               />
-              <img src="./assets/images/gallery_3.png" alt="" />
+              <img
+                src="./assets/images/gallery_3.png"
+                alt="Гонщик Дмитриев Савелий на старте"
+              />
             </picture>
           </div>
           <div class="gallery_image">
-            <picture>
+            <picture alt="Гонщик Алиев Альберт в прыжке">
               <source
                 type="image/webp"
                 srcset="./assets/images/gallery_4.webp"
               />
-              <img src="./assets/images/gallery_4.png" alt="" />
+              <img
+                src="./assets/images/gallery_4.png"
+                alt="Гонщик Алиев Альберт в прыжке"
+              />
             </picture>
           </div>
           <div class="gallery_image">
-            <picture>
+            <picture alt="Гонщик Юрий Карнаухов, выход из поворота">
               <source
                 type="image/webp"
                 srcset="./assets/images/gallery_5.webp"
               />
-              <img src="./assets/images/gallery_5.png" alt="" />
+              <img
+                src="./assets/images/gallery_5.png"
+                alt="Гонщик Юрий Карнаухов, выход из поворота"
+              />
             </picture>
           </div>
           <div class="gallery_image">
-            <img src="./assets/images/gallery_6.jpg" alt="" />
+            <img
+              src="./assets/images/gallery_6.jpg"
+              alt="Командная тренировка на треке Кайрат-282"
+            />
           </div>
           <div class="gallery_image">
-            <img src="./assets/images/gallery_7.jpg" alt="" />
+            <img
+              src="./assets/images/gallery_7.jpg"
+              alt="Командная тренировка в песках"
+            />
           </div>
           <div class="gallery_image">
-            <picture>
+            <picture alt="Гонщик Дмитрий Семенихин проходит поворот">
               <source
                 type="image/webp"
                 srcset="./assets/images/gallery_8.webp"
               />
-              <img src="./assets/images/gallery_8.png" alt="" />
+              <img
+                src="./assets/images/gallery_8.png"
+                alt="Гонщик Дмитрий Семенихин проходит поворот"
+              />
             </picture>
           </div>
         </div>
@@ -411,10 +430,10 @@
           <i class="bx bx-collapse-alt" id="popup_collapse-btn"></i>
           <i class="bx bxs-left-arrow" id="gallery_left"></i>
           <i class="bx bxs-right-arrow" id="gallery_right"></i>
-          <img src="" alt="" id="popup_image" />
+          <img src="" alt="Увеличенная картинка галереи" id="popup_image" />
         </div>
         <div class="gallery_background">
-          <img src="./assets/images/dirt_explosion.png" alt="" />
+          <img src="./assets/images/dirt_explosion.png" alt="Грязь для фона" />
         </div>
       </section>
 
@@ -427,10 +446,13 @@
               и начните свой захватывающий путь в мотоциклетном мире!
             </p>
             <div class="joinUs_text-background">
-              <img src="./assets/images/joinUs_text-background.png" alt="" />
+              <img
+                src="./assets/images/joinUs_text-background.png"
+                alt="Фото гонщика на фоне"
+              />
             </div>
           </div>
-          <!-- <div class="joinUs_content-video">
+          <div class="joinUs_content-video">
             <iframe
               src="https://kinescope.io/embed/g7UbMquyWTWyZS2aRmWLfi"
               id="joinUs_kinescope-player"
@@ -438,18 +460,21 @@
               frameborder="0"
               allowfullscreen
             ></iframe>
-          </div> -->
+          </div>
         </div>
       </section>
 
       <section id="contacts">
         <h1>КОНТАКТЫ</h1>
         <div class="ktm _anim-items _anim-no-repeat">
-          <img src="./assets/images/PHO_BIKE_90_RE_250-S.png" alt="" />
+          <img
+            src="./assets/images/PHO_BIKE_90_RE_250-S.png"
+            alt="Мотоцикл KTM"
+          />
         </div>
         <div class="contacts_content-wrapper">
           <div class="contacts_content">
-            <!-- <div class="contacts_content-map">
+            <div class="contacts_content-map">
               <iframe
                 src="https://yandex.kz/map-widget/v1/?ll=76.996369%2C43.315336&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxNjg3MzY1MjM3EmjSmtCw0LfQsNKb0YHRgtCw0L0sINCQ0LvQvNCw0YLRiywg0KLSr9GA0LrRgdGW0LEg0LDRg9C00LDQvdGLLCDSmtCw0LnRgNCw0YIg0YvSm9GI0LDQvCDQsNGD0LTQsNC90YssIDI4MiIKDQz-mUIV60ItQg%2C%2C&z=18.14"
                 width="380"
@@ -457,8 +482,9 @@
                 frameborder="0"
                 allowfullscreen="true"
                 style="position: relative"
+                id="yandex_map"
               ></iframe>
-            </div> -->
+            </div>
 
             <div class="contacts_content-phones">
               <div class="contact-item">

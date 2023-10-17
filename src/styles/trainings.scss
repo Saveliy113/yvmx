@@ -7,10 +7,8 @@
   display: flex;
   justify-content: center;
   gap: 10%;
-  // border: 1px solid green;
 
   &._animate > .trainings_background {
-    // transform: scale(0);
     transform: rotate(0deg);
   }
 
@@ -24,10 +22,6 @@
     top: -21%;
     left: -35%;
     transition: 1s ease-in;
-
-    &._animate {
-      // transform: ;
-    }
   }
 
   > .trainings_text {
@@ -57,6 +51,7 @@
 
   > .trainings_video-wrapper {
     text-align: center;
+
     > h1 {
       font-size: $title-bg;
       font-weight: bold;
@@ -67,10 +62,13 @@
 
     > .trainings_kinescope-player {
       position: relative;
-      padding-top: 99.5%;
       width: 80%;
-      border-radius: 12px;
+      padding-top: 99.5%;
       margin: 0 auto;
+      border-radius: 12px;
+      background: url('../assets/images/track_video_preview.png');
+      background-size: cover;
+      background-position: center;
 
       > iframe {
         position: absolute;
@@ -177,7 +175,7 @@
 
     > .trainings_video-wrapper {
       > .trainings_kinescope-player {
-        padding-top: 100.5%;
+        padding-top: 100%;
         width: 80%;
       }
 

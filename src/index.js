@@ -214,14 +214,17 @@ console.log(document.documentElement.scrollTop);
 
 let lightMode = localStorage.getItem('lightMode');
 const modeBtn = document.getElementById('mode_btn');
+const modeButtonImg = document.getElementById('mode_button-img');
 
 const enableLightMode = () => {
   document.body.classList.add('light');
+  modeButtonImg.src = './assets/icons/sun_icon.svg';
   localStorage.setItem('lightMode', true);
 };
 
 const disableLightMode = () => {
   localStorage.setItem('lightMode', false);
+  modeButtonImg.src = './assets/icons/moon_icon.png';
   document.body.classList.remove('light');
 };
 
