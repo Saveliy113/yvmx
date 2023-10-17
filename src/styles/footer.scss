@@ -24,6 +24,16 @@
 
   > p {
     font-size: $text-std;
+
+    > a {
+      border-bottom: 1px solid $white;
+      transition: all 0.2s ease-in;
+
+      &:hover {
+        color: $orange;
+        border-bottom-color: $orange;
+      }
+    }
   }
 }
 

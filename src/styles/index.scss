@@ -22,7 +22,6 @@ body {
   background-color: $gray-400;
   color: $white;
   overflow-x: hidden;
-  // height: 10000px;
   transition: all 0.2s ease-in-out;
 }
 
@@ -37,8 +36,7 @@ a {
 }
 
 main {
-  border: 1px solid blue;
-  overflow-x: hidden;
+  // border: 1px solid blue;
   padding-top: 70px;
-  // margin-top: 80px;
+  overflow-x: hidden;
 }

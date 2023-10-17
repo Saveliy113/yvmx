@@ -30,11 +30,12 @@ mainLogo.addEventListener('click', (event) => {
 
 /*--------------MOBILE MENU--------------*/
 
-const mobileMenuBtn = document.getElementById('mobile_menu-btn');
+const mobileMenuBtn = document.querySelector('.mobile_menu-btn');
 
 function closeMenu() {
   navMenu.classList.remove('opened');
   navMenu.classList.add('closing');
+  mobileMenuBtn.classList.remove('isOpened');
   navMenu.addEventListener(
     'animationend',
     () => {
@@ -47,7 +48,7 @@ function closeMenu() {
 mobileMenuBtn.addEventListener('click', () => {
   mobileMenuBtn.classList.toggle('isOpened');
 
-  if (mobileMenuBtn.classList.value === 'isOpened') {
+  if (mobileMenuBtn.className.includes('isOpened')) {
     navMenu.classList.add('opened');
   } else {
     closeMenu();
@@ -55,12 +56,19 @@ mobileMenuBtn.addEventListener('click', () => {
 });
 
 document.addEventListener('click', (event) => {
-  if (
-    !event.target.className.includes('header_nav') &&
-    event.target.id !== 'mobile_menu-btn' &&
-    navMenu.className.includes('opened')
-  ) {
-    mobileMenuBtn.classList.remove('isOpened');
+  const hasClassName =
+    event.target.className && typeof event.target.className === 'string';
+
+  if (hasClassName) {
+    if (
+      !event.target.className.includes('header_nav') &&
+      !event.target.className.includes('mobile_menu-btn') &&
+      !event.target.className === 'nav_links'
+    ) {
+      mobileMenuBtn.classList.remove('isOpened');
+      closeMenu();
+    }
+  } else {
     closeMenu();
   }
 });
@@ -167,7 +175,6 @@ function closePopup() {
 /*--------------ONSCROLL ANIMATIONS--------------*/
 
 const animItems = document.querySelectorAll('._anim-items');
-console.log(animItems);
 
 if (animItems.length > 0) {
   window.addEventListener('scroll', animateOnScroll);
@@ -209,7 +216,6 @@ if (animItems.length > 0) {
   animateOnScroll();
 }
 
-console.log(document.documentElement.scrollTop);
 /*--------------Light Mode--------------*/
 
 let lightMode = localStorage.getItem('lightMode');
@@ -224,7 +230,7 @@ const enableLightMode = () => {
 
 const disableLightMode = () => {
   localStorage.setItem('lightMode', false);
-  modeButtonImg.src = './assets/icons/moon_icon.png';
+  modeButtonImg.src = './assets/icons/moon_icon.svg';
   document.body.classList.remove('light');
 };
 
