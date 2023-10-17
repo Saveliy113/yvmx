@@ -9,7 +9,7 @@ import './styles/gallery.scss';
 import './styles/joinUs.scss';
 import './styles/footer.scss';
 import './styles/contacts.scss';
-import './styles/darkMode.scss';
+import './styles/lightMode.scss';
 
 /*--------------NAVIGATION--------------*/
 
@@ -63,15 +63,6 @@ document.addEventListener('click', (event) => {
     mobileMenuBtn.classList.remove('isOpened');
     closeMenu();
   }
-});
-
-/*--------------DARK MODE--------------*/
-
-const modeBtn = document.getElementById('mode_btn');
-
-modeBtn.addEventListener('click', (event) => {
-  document.body.classList.toggle('dark');
-  console.log(this);
 });
 
 /*----------------SECTIONS ANCHORS----------------*/
@@ -206,16 +197,44 @@ if (animItems.length > 0) {
       }
     }
   }
-  
+
   function elementOffset(element) {
     const rect = element.getBoundingClientRect();
     const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    
+
     return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
   }
-  
+
   animateOnScroll();
 }
 
 console.log(document.documentElement.scrollTop);
+/*--------------Light Mode--------------*/
+
+let lightMode = localStorage.getItem('lightMode');
+const modeBtn = document.getElementById('mode_btn');
+
+const enableLightMode = () => {
+  document.body.classList.add('light');
+  localStorage.setItem('lightMode', true);
+};
+
+const disableLightMode = () => {
+  localStorage.setItem('lightMode', false);
+  document.body.classList.remove('light');
+};
+
+if (lightMode === 'true') {
+  enableLightMode();
+}
+
+modeBtn.addEventListener('click', () => {
+  lightMode = localStorage.getItem('lightMode');
+
+  if (lightMode === 'true') {
+    disableLightMode();
+  } else {
+    enableLightMode();
+  }
+});

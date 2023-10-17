@@ -1,6 +1,6 @@
 @import 'src/styles/variables';
 
-body[class='dark'] {
+body[class='light'] {
   background-color: $light-white;
 
   .header {
@@ -130,7 +130,6 @@ body[class='dark'] {
     > .contacts_content-wrapper {
       > .contacts_content {
         > .contacts_content-phones {
-
           > .contact-item {
             > a {
               border-bottom-color: $gray-200;
