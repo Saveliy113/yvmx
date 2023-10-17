@@ -20,6 +20,7 @@ navMenu.addEventListener('click', (event) => {
   if (event.target.tagName.toLowerCase() === 'a') {
     event.preventDefault();
     document.querySelector(event.target.getAttribute('href')).scrollIntoView();
+    closeMenu();
   }
 });
 
@@ -56,19 +57,11 @@ mobileMenuBtn.addEventListener('click', () => {
 });
 
 document.addEventListener('click', (event) => {
-  const hasClassName =
-    event.target.className && typeof event.target.className === 'string';
-
-  if (hasClassName) {
-    if (
-      !event.target.className.includes('header_nav') &&
-      !event.target.className.includes('mobile_menu-btn') &&
-      !event.target.className === 'nav_links'
-    ) {
-      mobileMenuBtn.classList.remove('isOpened');
-      closeMenu();
-    }
-  } else {
+  if (
+    !event.composedPath().includes(navMenu) &&
+    !(event.target.id === 'mobile_menu-btn') &&
+    navMenu.className.includes('opened')
+  ) {
     closeMenu();
   }
 });
