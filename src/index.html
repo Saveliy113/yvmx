@@ -131,7 +131,10 @@
           <img src="./assets/images/mx_tire_sm.svg" alt="След покрышки" />
         </div>
         <div class="hero_image _anim-items">
-          <img src="./assets/images/whip_3.png" alt="Гонщик на мотоцикле" />
+          <picture>
+            <source type="image/webp" srcset="./assets/images/whip_3.webp" />
+            <img src="./assets/images/whip_3.png" alt="Гонщик на мотоцикле" />
+          </picture>
         </div>
       </section>
 
@@ -174,20 +177,41 @@
         <div class="disciplines_background">
           <picture>
             <source
+              type="image/webp"
+              srcset="./assets/images/disciplines_background_mobile.webp"
+              media="(max-width: 768px)"
+            />
+            <source
               srcset="./assets/images/disciplines_background_mobile.png"
               media="(max-width: 768px)"
             />
-            <img src="./assets/images/disciplines_background_1920.png" alt="" />
+            <source
+              type="image/webp"
+              srcset="./assets/images/disciplines_background_1920.webp"
+            />
+            <img
+              src="./assets/images/disciplines_background_1920.png"
+              alt="Фон секции Дисциплины"
+            />
           </picture>
         </div>
         <h1>Дисциплины</h1>
         <div class="disciplines_items">
           <div class="disciplines_item">
-            <img src="./assets/images/mx_start.png" alt="Мотокросс" />
+            <picture>
+              <source
+                type="image/webp"
+                srcset="./assets/images/mx_start.webp"
+              />
+              <img src="./assets/images/mx_start.png" alt="Мотокросс" />
+            </picture>
             <p>МОТОКРОСС</p>
           </div>
           <div class="disciplines_item">
-            <img src="./assets/images/enduro.png" alt="Эндуро" />
+            <picture>
+              <source type="image/webp" srcset="./assets/images/enduro.webp" />
+              <img src="./assets/images/enduro.png" alt="Эндуро" />
+            </picture>
             <p>ЭНДУРО</p>
           </div>
         </div>
@@ -366,10 +390,16 @@
             </picture>
           </div>
           <div class="gallery_image">
-            <img
-              src="./assets/images/gallery_2.jpg"
-              alt="Тренер Яновский Вячеслав на треке Фабричный"
-            />
+            <picture>
+              <source
+                type="image/webp"
+                srcset="./assets/images/gallery_2.webp"
+              />
+              <img
+                src="./assets/images/gallery_2.jpg"
+                alt="Тренер Яновский Вячеслав на треке Фабричный"
+              />
+            </picture>
           </div>
           <div class="gallery_image">
             <picture alt="Фото на старте">
@@ -408,16 +438,28 @@
             </picture>
           </div>
           <div class="gallery_image">
-            <img
-              src="./assets/images/gallery_6.jpg"
-              alt="Командная тренировка на треке Кайрат-282"
-            />
+            <picture>
+              <source
+                type="image/webp"
+                srcset="./assets/images/gallery_6.webp"
+              />
+              <img
+                src="./assets/images/gallery_6.jpg"
+                alt="Командная тренировка на треке Кайрат-282"
+              />
+            </picture>
           </div>
           <div class="gallery_image">
-            <img
-              src="./assets/images/gallery_7.jpg"
-              alt="Командная тренировка в песках"
-            />
+            <picture>
+              <source
+                type="image/webp"
+                srcset="./assets/images/gallery_7.webp"
+              />
+              <img
+                src="./assets/images/gallery_7.jpg"
+                alt="Командная тренировка в песках"
+              />
+            </picture>
           </div>
           <div class="gallery_image">
             <picture alt="Гонщик Дмитрий Семенихин проходит поворот">
@@ -434,13 +476,72 @@
         </div>
 
         <div class="gallery_popup">
-          <i class="bx bx-collapse-alt" id="popup_collapse-btn"></i>
-          <i class="bx bxs-left-arrow" id="gallery_left"></i>
-          <i class="bx bxs-right-arrow" id="gallery_right"></i>
+          <div class="collapse-alt" id="popup_collapse-btn">
+            <svg
+              viewBox="0 0 44 44"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M42 18H26V2"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2 26H18V42"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div class="left-arrow" id="gallery_left">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_287_18)">
+                <path
+                  d="M13.883 5.00695L13.941 5.00195H14.059L14.117 5.00695L14.177 5.01595L14.229 5.02595L14.337 5.05795L14.404 5.08495L14.536 5.15495L14.626 5.21995L14.707 5.29295L14.79 5.38695L14.844 5.46395L14.898 5.55995L14.915 5.59595L14.942 5.66295L14.974 5.77095L14.984 5.82395L14.994 5.88395L14.998 5.94095L15 5.99995V18C15 18.852 14.014 19.297 13.377 18.783L13.293 18.707L7.29301 12.707C7.12084 12.5348 7.01741 12.3057 7.00212 12.0626C6.98684 11.8196 7.06076 11.5794 7.21001 11.387L7.29301 11.293L13.293 5.29295L13.387 5.20995L13.464 5.15595L13.56 5.10195L13.596 5.08495L13.663 5.05795L13.771 5.02595L13.824 5.01595L13.884 5.00595L13.883 5.00695Z"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_287_18">
+                  <rect width="24" height="24" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+          <div class="right-arrow" id="gallery_right">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_287_18)">
+                <path
+                  d="M10.117 18.993L10.059 18.998L9.94099 18.998L9.88299 18.993L9.82299 18.984L9.77099 18.974L9.66299 18.942L9.59599 18.915L9.46399 18.845L9.37399 18.78L9.29299 18.707L9.20999 18.613L9.15599 18.536L9.10199 18.44L9.08499 18.404L9.05799 18.337L9.02599 18.229L9.01599 18.176L9.00599 18.116L9.00199 18.059L8.99999 18L8.99999 6.00005C8.99999 5.14805 9.98599 4.70305 10.623 5.21705L10.707 5.29305L16.707 11.293C16.8792 11.4652 16.9826 11.6943 16.9979 11.9374C17.0132 12.1804 16.9392 12.4206 16.79 12.613L16.707 12.707L10.707 18.707L10.613 18.79L10.536 18.844L10.44 18.898L10.404 18.915L10.337 18.942L10.229 18.974L10.176 18.984L10.116 18.994L10.117 18.993Z"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_287_18">
+                  <rect
+                    width="24"
+                    height="24"
+                    fill="white"
+                    transform="translate(24 24) rotate(-180)"
+                  />
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
           <img src="" alt="Увеличенная картинка галереи" id="popup_image" />
         </div>
         <div class="gallery_background">
-          <img src="./assets/images/dirt_explosion.png" alt="Грязь для фона" />
+          <picture>
+            <source
+              type="image/webp"
+              srcset="./assets/images/dirt_explosion.webp"
+            />
+            <img
+              src="./assets/images/dirt_explosion.png"
+              alt="Грязь для фона"
+            />
+          </picture>
         </div>
       </section>
 
@@ -474,10 +575,17 @@
       <section id="contacts">
         <h1>КОНТАКТЫ</h1>
         <div class="ktm _anim-items _anim-no-repeat">
-          <img
-            src="./assets/images/PHO_BIKE_90_RE_250-S.png"
-            alt="Мотоцикл KTM"
-          />
+          <picture>
+            <source
+              type="image/webp"
+              srcset="./assets/images/PHO_BIKE_90_RE_250-S.webp"
+              media="(min-width: 1200px)"
+            />
+            <source
+              srcset="./assets/images/PHO_BIKE_90_RE_250-S.png"
+              media="(min-width: 1200px)"
+            />
+          </picture>
         </div>
         <div class="contacts_content-wrapper">
           <div class="contacts_content">

@@ -80,12 +80,14 @@
     transition: all 0.5s ease-in-out;
 
     &.active {
-      display: block;
+      display: flex;
+      justify-content: space-around;
       animation: openPopup 0.3s ease-in;
     }
 
     &.closing {
-      display: block;
+      display: flex;
+      justify-content: space-around;
       animation: closePopup 0.3s ease-in;
     }
 
@@ -102,37 +104,48 @@
       margin: 0 auto;
     }
 
-    > .bxs-left-arrow,
-    > .bxs-right-arrow {
-      position: absolute;
-      width: 50px;
-      height: 50px;
-      font-size: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-      top: 50%;
+    > .left-arrow,
+    > .right-arrow {
+      width: 30%;
+      height: 50%;
+      align-self: center;
       cursor: pointer;
-      transform: translateY(-50%);
-      background-color: $orange;
-      transition: all 0.1s ease-in;
+      border: 1px solid red;
       z-index: 1;
 
-      &:hover {
+      > svg {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        top: 50%;
+        cursor: pointer;
+        transform: translateY(-50%);
+        background-color: $orange;
+        fill: $white;
+        transition: all 0.1s ease-in;
+        z-index: 1;
+      }
+
+      &:hover > svg {
+        background-color: darken($orange, 2%);
+      }
+
+      &:active > svg {
         background-color: darken($orange, 10%);
       }
     }
 
-    > .bxs-left-arrow {
-      left: 5%;
+    > .right-arrow {
+      display: flex;
+      justify-content: flex-end;
     }
 
-    > .bxs-right-arrow {
-      right: 5%;
-    }
-
-    > .bx-collapse-alt {
+    > .collapse-alt {
       width: 70px;
       height: 70px;
       font-size: 50px;
@@ -144,10 +157,16 @@
       align-items: center;
       cursor: pointer;
       transition: all 0.1s ease-in;
+      stroke: $orange;
 
       &:hover {
         transform: scale(110%);
         color: $orange;
+      }
+
+      &:active {
+        transform: scale(100%);
+        fill: darken($orange, 10%);
       }
     }
   }
@@ -161,6 +180,14 @@
     }
 
     > .gallery_popup {
+      &.active {
+        justify-content: space-between;
+      }
+
+      &.closing {
+        justify-content: space-between;
+      }
+
       > .bxs-left-arrow,
       > .bxs-right-arrow {
         background-color: rgba($orange, 0.6);
