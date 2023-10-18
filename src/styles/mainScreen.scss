@@ -31,7 +31,6 @@
   &::before {
     content: '';
     padding-left: 100px;
-    background-image: url('../assets/images/mx_track.png');
     background-repeat: no-repeat;
     background-position: right;
     position: absolute;
@@ -41,6 +40,15 @@
     left: 0px;
     z-index: -1;
     opacity: 0.4;
+
+    @supports (
+      background:
+        url('data:image/webp;base64,UklGRhIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEAAwA0JaQAA3AA/v7iAAA=')
+    ) {
+      background-image: url('../assets/images/mx_track.webp');
+    }
+
+    background-image: url('../assets/images/mx_track.png');
   }
 
   > .main_screen-content {
