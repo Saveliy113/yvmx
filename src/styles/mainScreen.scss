@@ -14,6 +14,14 @@
     opacity: 0;
     transition: all 0.5s ease-in;
 
+    > picture {
+      display: block;
+
+      > img {
+        width: 100%;
+      }
+    }
+
     &._animate {
       transform: translateX(0);
       opacity: 1;
@@ -157,7 +165,7 @@
       padding-right: 0;
       margin-right: 0;
 
-      > img {
+      > picture {
         width: 95%;
       }
     }
@@ -201,7 +209,7 @@
       margin-top: 0;
       padding-top: 0;
 
-      > img {
+      > picture {
         width: 80%;
         position: relative;
         right: -15%;
@@ -258,7 +266,7 @@
       right: -25%;
       z-index: -1;
 
-      > img {
+      > picture {
         width: 60%;
       }
     }
