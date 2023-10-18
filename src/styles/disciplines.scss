@@ -38,7 +38,7 @@
     margin-top: 50px;
 
     > .disciplines_item {
-      > h3 {
+      > p {
         font-size: $title-sm;
         font-weight: 400;
         position: relative;
@@ -67,7 +67,7 @@
           width: 100%;
         }
 
-        > h3 {
+        > p {
           font-size: 2rem;
           width: fit-content;
           left: -15%;
@@ -107,7 +107,7 @@
           width: 100%;
         }
 
-        > h3 {
+        > p {
           position: absolute;
           top: unset;
           bottom: -5%;
@@ -148,7 +148,7 @@
           object-fit: cover;
         }
 
-        > h3 {
+        > p {
           left: -25%;
         }
       }
