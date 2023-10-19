@@ -63,8 +63,10 @@
       .disciplines_item {
         width: 300px;
 
-        > img {
-          width: 100%;
+        > picture {
+          > img {
+            width: 100%;
+          }
         }
 
         > p {
@@ -89,7 +91,7 @@
     }
 
     > h1 {
-      font-size: 3.5rem;
+      font-size: 3rem;
     }
 
     > .disciplines_items {
@@ -103,8 +105,10 @@
         position: relative;
         width: 240px;
 
-        img {
-          width: 100%;
+        > picture {
+          > img {
+            width: 100%;
+          }
         }
 
         > p {
@@ -143,9 +147,11 @@
       > .disciplines_item {
         width: 210px;
 
-        img {
-          width: 100%;
-          object-fit: cover;
+        > picture {
+          > img {
+            width: 100%;
+            object-fit: cover;
+          }
         }
 
         > p {

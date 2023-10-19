@@ -58,9 +58,11 @@
         z-index: -1;
         opacity: 0.8;
 
-        > img {
-          max-width: 100%;
-          height: 100%;
+        > picture {
+          > img {
+            max-width: 100%;
+            height: 100%;
+          }
         }
       }
 
@@ -167,7 +169,7 @@
           width: 100%;
           height: 200px;
 
-          > img {
+          > picture {
             display: block;
             width: 100%;
             height: 100%;

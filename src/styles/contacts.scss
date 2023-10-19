@@ -60,6 +60,7 @@
           > svg {
             width: 45px;
             height: 45px;
+            flex-shrink: 0;
             fill: $orange;
           }
         }
@@ -203,6 +204,10 @@
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
   #contacts {
+    > h1 {
+      font-size: 3rem;
+    }
+
     > .contacts_content-wrapper {
       padding: 0 $section-padding-mob;
 
@@ -240,6 +245,8 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
+  #contacts {
+  }
   /* */
 }
 

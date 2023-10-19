@@ -114,7 +114,13 @@
 
     > .services_items {
       row-gap: 25px;
+      column-gap: 10px;
       justify-content: center;
+
+      > .service_item {
+        width: 170px;
+        height: 160px;
+      }
     }
   }
 }
