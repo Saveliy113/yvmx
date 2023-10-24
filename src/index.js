@@ -1,130 +1,122 @@
-import './styles/index.scss';
-import './styles/header.scss';
-import './styles/mainScreen.scss';
-import './styles/aboutUs.scss';
-import './styles/disciplines.scss';
-import './styles/services.scss';
-import './styles/trainings.scss';
-import './styles/gallery.scss';
-import './styles/joinUs.scss';
-import './styles/footer.scss';
-import './styles/contacts.scss';
-import './styles/lightMode.scss';
+import "./styles/index.scss";
+import "./styles/header.scss";
+import "./styles/mainScreen.scss";
+import "./styles/aboutUs.scss";
+import "./styles/disciplines.scss";
+import "./styles/services.scss";
+import "./styles/trainings.scss";
+import "./styles/gallery.scss";
+import "./styles/joinUs.scss";
+import "./styles/footer.scss";
+import "./styles/contacts.scss";
+import "./styles/lightMode.scss";
 
 /*--------------NAVIGATION--------------*/
 
-const navMenu = document.querySelector('.header_nav');
-const mainLogo = document.querySelector('.main_logo');
+const navMenu = document.querySelector(".header_nav");
+const mainLogo = document.querySelector(".main_logo");
 
-navMenu.addEventListener('click', (event) => {
-  if (event.target.tagName.toLowerCase() === 'a') {
+navMenu.addEventListener("click", (event) => {
+  if (event.target.tagName.toLowerCase() === "a") {
     event.preventDefault();
-    document.querySelector(event.target.getAttribute('href')).scrollIntoView();
+    document.querySelector(event.target.getAttribute("href")).scrollIntoView();
     closeMenu();
   }
 });
 
-mainLogo.addEventListener('click', (event) => {
+mainLogo.addEventListener("click", (event) => {
   event.preventDefault();
   scrollTo({ top: 0 });
 });
 
 /*--------------MOBILE MENU--------------*/
 
-const mobileMenuBtn = document.querySelector('.mobile_menu-btn');
+const mobileMenuBtn = document.querySelector(".mobile_menu-btn");
 
 function closeMenu() {
-  navMenu.classList.remove('opened');
-  navMenu.classList.add('closing');
-  mobileMenuBtn.classList.remove('isOpened');
+  navMenu.classList.remove("opened");
+  navMenu.classList.add("closing");
+  mobileMenuBtn.classList.remove("isOpened");
   navMenu.addEventListener(
-    'animationend',
+    "animationend",
     () => {
-      navMenu.classList.remove('closing');
+      navMenu.classList.remove("closing");
     },
     { once: true }
   );
 }
 
-mobileMenuBtn.addEventListener('click', () => {
-  mobileMenuBtn.classList.toggle('isOpened');
+mobileMenuBtn.addEventListener("click", () => {
+  mobileMenuBtn.classList.toggle("isOpened");
 
-  if (mobileMenuBtn.className.includes('isOpened')) {
-    navMenu.classList.add('opened');
+  if (mobileMenuBtn.className.includes("isOpened")) {
+    navMenu.classList.add("opened");
   } else {
     closeMenu();
   }
 });
 
-document.addEventListener('click', (event) => {
+document.addEventListener("click", (event) => {
   if (
     !event.composedPath().includes(navMenu) &&
-    !(event.target.id === 'mobile_menu-btn') &&
-    navMenu.className.includes('opened')
+    !(event.target.id === "mobile_menu-btn") &&
+    navMenu.className.includes("opened")
   ) {
     closeMenu();
   }
 });
 
 /*----------------SECTIONS ANCHORS----------------*/
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('header nav a');
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("header nav a");
 
 function changeActiveMenuTab() {
   const scrollFromTop = window.scrollY;
 
-  if (scrollFromTop === 0) {
-    document
-      .querySelector('header nav a[href="#main_screen"]')
-      .classList.add('active');
+  sections.forEach((section) => {
+    const sectionHeight = section.offsetHeight;
+    const sectionOffset = section.offsetTop - sectionHeight / 4;
+    const sectionId = section.getAttribute("id");
 
-    return;
-  } else {
-    sections.forEach((section) => {
-      const sectionHeight = section.offsetHeight;
-      const sectionOffset = section.offsetTop - sectionHeight / 4;
-      const sectionId = section.getAttribute('id');
+    if (
+      scrollFromTop > sectionOffset &&
+      scrollFromTop < sectionOffset + sectionHeight
+    ) {
+      navLinks.forEach((navLink) => {
+        const sectionLink = document.querySelector(
+          `header nav a[href='#${sectionId}']`
+        );
 
-      if (
-        scrollFromTop > sectionOffset &&
-        scrollFromTop < sectionOffset + sectionHeight
-      ) {
-        navLinks.forEach((navLink) => {
-          const sectionLink = document.querySelector(
-            `header nav a[href='#${sectionId}']`
-          );
-
-          if (sectionLink) {
-            navLink.classList.remove('active');
-            sectionLink.classList.add('active');
-          }
-        });
-      }
-    });
-  }
+        if (sectionLink) {
+          navLink.classList.remove("active");
+          sectionLink.classList.add("active");
+        }
+      });
+    }
+  });
 }
 
-window.addEventListener('DOMContentLoaded', changeActiveMenuTab);
-window.addEventListener('scroll', changeActiveMenuTab);
+window.addEventListener("DOMContentLoaded", changeActiveMenuTab);
+window.addEventListener("scroll", changeActiveMenuTab);
 
 /*--------------GALLERY--------------*/
-const galleryImages = document.querySelectorAll('.gallery_image');
-const galleryPopup = document.querySelector('.gallery_popup');
-const galleryCollapseBtn = document.querySelector('#popup_collapse-btn');
-const popupImage = document.querySelector('#popup_image');
-const galleryLeftButton = document.querySelector('#gallery_left');
-const galleryRightButton = document.querySelector('#gallery_right');
+const galleryImages = document.querySelectorAll(".gallery_image");
+const galleryPopup = document.querySelector(".gallery_popup");
+const galleryCollapseBtn = document.querySelector("#popup_collapse-btn");
+const popupImage = document.querySelector("#popup_image");
+const galleryLeftButton = document.querySelector("#gallery_left");
+const galleryRightButton = document.querySelector("#gallery_right");
 let currentImage = 1;
 
 galleryImages.forEach((image, id) => {
-  image.addEventListener('click', () => {
-    galleryPopup.classList.toggle('active');
-    document.body.style.overflowY = 'hidden';
+  image.addEventListener("click", () => {
+    galleryPopup.classList.toggle("active");
+    document.body.style.overflowY = "hidden";
     updateImage(id + 1);
   });
 });
 
-galleryLeftButton.addEventListener('click', () => {
+galleryLeftButton.addEventListener("click", () => {
   currentImage -= 1;
 
   if (currentImage <= 0) {
@@ -134,7 +126,7 @@ galleryLeftButton.addEventListener('click', () => {
   updateImage(currentImage);
 });
 
-galleryRightButton.addEventListener('click', () => {
+galleryRightButton.addEventListener("click", () => {
   currentImage += 1;
 
   if (currentImage > galleryImages.length) {
@@ -144,7 +136,7 @@ galleryRightButton.addEventListener('click', () => {
   updateImage(currentImage);
 });
 
-galleryCollapseBtn.addEventListener('click', () => {
+galleryCollapseBtn.addEventListener("click", () => {
   closePopup();
 });
 
@@ -153,13 +145,13 @@ function updateImage(i) {
 }
 
 function closePopup() {
-  galleryPopup.classList.remove('active');
-  galleryPopup.classList.add('closing');
+  galleryPopup.classList.remove("active");
+  galleryPopup.classList.add("closing");
   galleryPopup.addEventListener(
-    'animationend',
+    "animationend",
     () => {
-      galleryPopup.classList.remove('closing');
-      document.body.style.overflowY = 'unset';
+      galleryPopup.classList.remove("closing");
+      document.body.style.overflowY = "unset";
     },
     { once: true }
   );
@@ -167,10 +159,10 @@ function closePopup() {
 
 /*--------------ONSCROLL ANIMATIONS--------------*/
 
-const animItems = document.querySelectorAll('._anim-items');
+const animItems = document.querySelectorAll("._anim-items");
 
 if (animItems.length > 0) {
-  window.addEventListener('scroll', animateOnScroll);
+  window.addEventListener("scroll", animateOnScroll);
 
   function animateOnScroll() {
     for (let i = 0; i < animItems.length; i++) {
@@ -189,10 +181,10 @@ if (animItems.length > 0) {
         window.scrollY > animItemOffset - animItemPoint &&
         window.scrollY < animItemOffset + animItemHeight
       ) {
-        animItem.classList.add('_animate');
+        animItem.classList.add("_animate");
       } else {
-        if (!animItem.classList.contains('_anim-no-repeat')) {
-          animItem.classList.remove('_animate');
+        if (!animItem.classList.contains("_anim-no-repeat")) {
+          animItem.classList.remove("_animate");
         }
       }
     }
@@ -211,30 +203,30 @@ if (animItems.length > 0) {
 
 /*--------------Light Mode--------------*/
 
-let lightMode = localStorage.getItem('lightMode');
-const modeBtn = document.getElementById('mode_btn');
-const modeButtonImg = document.getElementById('mode_button-img');
+let lightMode = localStorage.getItem("lightMode");
+const modeBtn = document.getElementById("mode_btn");
+const modeButtonImg = document.getElementById("mode_button-img");
 
 const enableLightMode = () => {
-  document.body.classList.add('light');
-  modeButtonImg.src = './assets/icons/sun_icon.svg';
-  localStorage.setItem('lightMode', true);
+  document.body.classList.add("light");
+  modeButtonImg.src = "./assets/icons/sun_icon.svg";
+  localStorage.setItem("lightMode", true);
 };
 
 const disableLightMode = () => {
-  localStorage.setItem('lightMode', false);
-  modeButtonImg.src = './assets/icons/moon_icon.svg';
-  document.body.classList.remove('light');
+  localStorage.setItem("lightMode", false);
+  modeButtonImg.src = "./assets/icons/moon_icon.svg";
+  document.body.classList.remove("light");
 };
 
-if (lightMode === 'true') {
+if (lightMode === "true") {
   enableLightMode();
 }
 
-modeBtn.addEventListener('click', () => {
-  lightMode = localStorage.getItem('lightMode');
+modeBtn.addEventListener("click", () => {
+  lightMode = localStorage.getItem("lightMode");
 
-  if (lightMode === 'true') {
+  if (lightMode === "true") {
     disableLightMode();
   } else {
     enableLightMode();

@@ -14,6 +14,7 @@ const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
 
 const fileName = (ext) => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`);
+
 const optimizationConfig = () => {
   const config = {};
 
@@ -61,10 +62,6 @@ const createWebpackConfig = () => {
       watchFiles: ['src/*.html'],
     },
     plugins: [
-      new DefinePlugin({
-        'process.env': JSON.stringify(process.env),
-      }),
-      new CleanWebpackPlugin(),
       new HTMLWebpackPlugin({
         template: './index.html',
         minify: {
@@ -74,9 +71,13 @@ const createWebpackConfig = () => {
       new MiniCssExtractPlugin({
         filename: fileName('css'),
       }),
+      new DefinePlugin({
+        'process.env': JSON.stringify(process.env),
+      }),
       new CopyPlugin({
         patterns: [{ from: './assets', to: './assets' }],
       }),
+      new CleanWebpackPlugin(),
     ],
     optimization: optimizationConfig(),
     module: {
@@ -89,7 +90,6 @@ const createWebpackConfig = () => {
           test: /\.s[ac]ss$/i,
           use: cssLoaders('sass-loader'),
         },
-        { test: /\.(png|jpg|svg|gif)$/i, type: 'asset/resource' },
         {
           test: /\.m?js$/,
           exclude: /node_modules/,
@@ -100,6 +100,7 @@ const createWebpackConfig = () => {
             },
           },
         },
+        { test: /\.(png|jpg|svg|gif)$/i, type: 'asset/resource' },
       ],
     },
   };

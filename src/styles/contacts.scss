@@ -1,4 +1,4 @@
-@import 'src/styles/variables';
+@import "src/styles/variables";
 
 #contacts {
   position: relative;
@@ -8,9 +8,9 @@
   > .ktm {
     position: absolute;
     top: 12%;
-    left: -10%;
+    left: -20%;
     z-index: 1;
-    transform: translateX(90%);
+    transform: translateX(95%);
     transition: all 2.5s ease-out;
 
     &._animate {
@@ -97,7 +97,7 @@
               &::before {
                 position: absolute;
                 display: block;
-                content: '';
+                content: "";
                 width: 100%;
                 height: 100%;
                 border-radius: 50%;
@@ -152,7 +152,7 @@
         > iframe {
           width: 100%;
           height: 100%;
-          background: url('../assets/images/map_preview.jpg');
+          background: url("../assets/images/map_preview.jpg");
           background-size: cover;
           background-position: center;
         }
@@ -161,6 +161,14 @@
   }
 }
 
+@media only screen and (max-width: 1400px) {
+  #contacts {
+    > .contacts_content-wrapper {
+      justify-content: center;
+      padding-right: 0;
+    }
+  }
+}
 /* Large Devices, Wide Screens */
 @media only screen and (max-width: 1200px) {
   #contacts {
