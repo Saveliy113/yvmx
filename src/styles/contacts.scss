@@ -47,6 +47,12 @@
           align-items: center;
           gap: 15px;
 
+          > .phones {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+          }
+
           > p,
           > a {
             font-size: $text-bg;
