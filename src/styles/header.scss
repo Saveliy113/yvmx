@@ -1,5 +1,5 @@
-@import 'src/styles/variables';
-@import 'src/styles/animations';
+@import "src/styles/variables";
+@import "src/styles/animations";
 
 .header {
   width: 100%;
@@ -31,7 +31,7 @@
         width: 100%;
         height: 100%;
         border-radius: 50%;
-        animation: white-light infinite alternate 2s ease-in-out;
+        box-shadow: 0 0 15px $white;
       }
     }
 
@@ -42,7 +42,7 @@
       top: -13%;
       left: -15%;
       display: block;
-      content: '';
+      content: "";
       background-color: $gray-600;
       z-index: -1;
       border-radius: 50%;

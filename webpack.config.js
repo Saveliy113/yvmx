@@ -78,6 +78,11 @@ const createWebpackConfig = () => {
         patterns: [{ from: './assets', to: './assets' }],
       }),
       new CleanWebpackPlugin(),
+      new FaviconsWebpackPlugin({
+        logo: './assets/favicons/yvmx_logo.svg',
+        outputPath: './assets/favicons',
+        prefix: 'assets/favicons/',
+      }),
     ],
     optimization: optimizationConfig(),
     module: {
